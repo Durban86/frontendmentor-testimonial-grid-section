@@ -1,1 +1,158 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: hsl(0, 0%, 81%);
+}
+
+.container {
+    width: 375px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 28px;
+}
+
+.daniel {
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-position: right 10% top;
+    background-repeat: no-repeat;
+    background-size: 125px 125px;
+}
+
+.jonathan {
+    background-color: hsl(217, 19%, 35%);
+}
+
+.patrick {
+    background-color: hsl(219, 29%, 14%);
+}
+
+.jeanette, .kira {
+    background-color: hsl(0, 0%, 100%);
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+}
+
+.card-top img {
+    border-radius: 32px;
+    margin-right: 16px;
+    border: 5px solid;
+}
+
+.daniel .card-top img {
+    border: 5px solid hsla(0, 0%, 100%, 0.5);
+}
+
+.patrick .card-top img {
+    border: 5px solid hsl(263, 55%, 52%);
+}
+
+.jonathan .card-top img,
+.jeanette .card-top img,
+.kira .card-top img {
+    border: 5px solid hsla(0, 0%, 100%, 0);
+}
+
+.name-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 20px;
+    color: hsla(0, 0%, 0%, 0.5);
+}
+
+.daniel .name-wrapper .name,
+.patrick .name-wrapper .name,
+.jonathan .name-wrapper .name {
+    color:hsl(0, 0%, 100%);
+}
+
+.daniel .name-wrapper .title,
+.patrick .name-wrapper .title,
+.jonathan .name-wrapper .title {
+    color:hsla(0, 0%, 100%, 0.5);
+}
+
+h1 {
+    font-weight: 600;
+    margin: 18px 0;
+}
+
+.quote {
+    font-size: 16px;
+    line-height: 1.5;
+    color: hsla(0, 0%, 0%, 0.7);
+}
+
+.daniel h1,
+.patrick h1,
+.jonathan h1 {
+    color: hsl(0, 0%, 100%);
+}
+
+.daniel .quote,
+.patrick .quote,
+.jonathan .quote {
+    color: hsla(0, 0%, 100%, 0.7);
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1440px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 32px;
+
+    }
+    .card {
+        justify-content: flex-start;
+    }
+    .daniel {
+        grid-column: 1/3;
+    }
+    .jonathan {
+        grid-column: 3/4;
+    }
+    .jeanette {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .patrick {
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+    .kira {
+        grid-column: 4/5;
+        grid-row: 1/3;
+    }
+}
